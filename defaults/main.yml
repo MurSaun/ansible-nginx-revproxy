@@ -1,15 +1,15 @@
 ---
 
 nginx_revproxy_sites:                                         # List of sites to reverse proxy
-  example.com:                                                # Domain name
+  jenkins4.twig-world.com:                                                # Domain name
     client_max_body_size: "256M"
     proxy_read_timeout: "360"
     domains:                                                  # List of server_name aliases
-      - example.com
-      - www.example.com
+      - jenkins4.twig-world.com
+      - www.jenkins4.twig-world.com
     upstreams:                                                # List of Upstreams
-      - {backend_address: 192.168.0.100, backend_port: 80}
-      - {backend_address: 192.168.0.101, backend_port: 8080}
+      - {backend_address: 127.0.0.1, backend_port: 80}
+      - {backend_address: 127.0.0.1, backend_port: 8080}
     # extra_locations:
     #   websocket:
     #     upstreams:

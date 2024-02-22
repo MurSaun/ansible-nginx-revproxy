@@ -103,8 +103,7 @@
 - name: Insert cert-bot renew in crontab
   cron:
     name: "cert-bot renew"
-    job: "certbot{{ '-auto' if nginx_revproxy_certbot_auto else '' }} \
-renew --post-hook \"systemctl reload nginx\" >> /var/log/letsencrypt/letsencrypt-update.log 2>&1"
+    job: "certbot{{ '-auto' if nginx_revproxy_certbot_auto else '' }} \ renew --post-hook \"systemctl reload nginx\" >> /var/log/letsencrypt/letsencrypt-update.log 2>&1"
     hour: "3"
     minute: "30"
     weekday: "1"
